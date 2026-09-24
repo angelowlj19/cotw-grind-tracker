@@ -1,0 +1,3470 @@
+/* ========================================================
+   COTW GRIND TRACKER
+======================================================== */
+
+
+/* ========================================================
+   GREAT ONE DATA
+======================================================== */
+
+const greatOneData = {
+
+    "Whitetail Deer": {
+        racks: [
+            "Cluster",
+            "Short Rack",
+            "Droptine",
+            "Blade",
+            "Big Rack",
+            "Typical",
+            "50/50"
+        ],
+        furs: [
+            "Brown",
+            "Dark Brown",
+            "Tan",
+            "Fabled Piebald"
+        ]
+    },
+
+    "Red Deer": {
+        furs: [
+            "Fabled Spotted"
+        ]
+    },
+
+    "Black Bear": {
+        furs: [
+            "Fabled Chestnut",
+            "Fabled Cream",
+            "Fabled Glacier",
+            "Fabled Spirit",
+            "Fabled Spotted"
+        ]
+    },
+
+    "Moose": {
+        racks: [
+            "Spider Rack",
+            "Typical Rack",
+            "Quad Paddle Rack",
+            "Cluster Rack",
+            "50/50"
+        ],
+        furs: [
+            "Fabled Ashen",
+            "Fabled Spruce",
+            "Fabled Birch",
+            "Fabled Oak",
+            "Fabled Two Tone",
+            "Fabled Speckled"
+        ]
+    },
+
+    "Fallow Deer": {
+        racks: [
+            "Typical Rack",
+            "Irish Elk Rack",
+            "Spoon Rack",
+            "Blade Rack"
+        ],
+        furs: [
+            "Fabled Golden",
+            "Fabled Hooded",
+            "Fabled Mocha",
+            "Fabled Painted",
+            "Painted Silver"
+        ]
+    },
+
+    "Himalayan Tahr": {
+        furs: [
+            "Fabled Gold",
+            "Fabled Grey",
+            "Fabled Half",
+            "Fabled Latte",
+            "Fabled Scar",
+            "Fabled Snow",
+            "Fabled Skull"
+        ],
+        furLabel: "Fur"
+    },
+
+    "Ring-Necked Pheasant": {
+        furs: [
+            "Fabled Citrine",
+            "Fabled Emerald",
+            "Fabled Garnet",
+            "Fabled Morganite",
+            "Fabled Obsidian",
+            "Fabled Pearl",
+            "Fabled Ruby",
+            "Fabled Sapphire"
+        ],
+        furLabel: "Plumage"
+    },
+
+    "Red Fox": {
+        furs: [
+            "Fabled Blood Moon",
+            "Fabled Candycane",
+            "Fabled Cherry Blossom",
+            "Fabled Licorice",
+            "Fabled Midnight Poppy",
+            "Fabled Mystic Snowdrop",
+            "Fabled Peppermint",
+            "Fabled Rosebud Frost",
+            "Fabled Scarlet Nightshade"
+        ]
+    },
+
+    "Mule Deer": {
+        racks: [
+            "Typical Rack",
+            "Atypical Rack",
+            "Droptine Rack",
+            "Heart Rack",
+            "Velvet Rack",
+            "Corkscrew Rack"
+        ],
+        furs: [
+            "Fabled Cinnamon Stripes",
+            "Fabled Cobweb Enigma",
+            "Fabled Dripple Drizzle",
+            "Fabled Dusky Drift",
+            "Fabled Milky Way",
+            "Fabled Petal Puff"
+        ]
+    },
+
+    "Gray Wolf": {
+        furs: [
+            "Fabled Battlethorn",
+            "Fabled Dawnbreak",
+            "Fabled Frostbite",
+            "Fabled Gravehide",
+            "Fabled Hollow",
+            "Fabled Razorwind",
+            "Fabled Scarborne",
+            "Fabled Twinsoul",
+            "Fabled Vanguard"
+        ]
+    },
+
+    "Wild Boar": {
+        furs: [
+            "Fabled Ash",
+            "Fabled Brindle",
+            "Fabled Butterscotch",
+            "Fabled Chalk",
+            "Fabled Cinder",
+            "Fabled Scorch",
+            "Fabled Smolder",
+            "Fabled Stipple",
+            "Fabled Stitch"
+        ]
+    },
+
+    "Roe Deer": {
+        furs: [
+            "Fabled Ghostveil",
+            "Fabled Kindledawn",
+            "Fabled Mistbound",
+            "Fabled Moonmakred",
+            "Fabled Rustveil",
+            "Fabled Wildfire"
+        ]
+    },
+
+    "Jaguar": {
+        furs: [
+            "Fabled Guiltdusk",
+            "Fabled Ivorybark",
+            "Fabled Porcelain",
+            "Fabled Rosewash",
+            "Fabled Tapestry",
+            "Fabled Umbrafade",
+            "Fabled Vellum"
+        ]
+    },
+
+    "Taruca": {
+        furs: [
+            "Fabled Cirrus",
+            "Fabled Stormcloak",
+            "Fabled Eclipse",
+            "Fabled Starthistle",
+            "Fabled Saffronglow"
+        ]
+    }
+
+};
+
+
+/* ========================================================
+   MAP DATA
+======================================================== */
+
+const speciesMaps = {
+
+    "Whitetail Deer": [
+        "Layton Lake District",
+        "Rancho del Arroyo",
+        "Mississippi Acres Preserve",
+        "Revontuli Coast",
+        "New England Mountains",
+        "Askiy Ridge Hunting Preserve",
+        "Intisuyu Hunting Reserve"
+    ],
+
+    "Red Deer": [
+        "Hirschfelden Hunting Reserve",
+        "Parque Fernando",
+        "Cuatro Colinas Game Reserve",
+        "Te Awaroa National Park",
+        "Emerald Coast Australia",
+        "Tòrr nan Sìthean Hunting Estate"
+    ],
+
+    "Black Bear": [
+        "Layton Lake District",
+        "Silver Ridge Peaks",
+        "Mississippi Acres Preserve",
+        "New England Mountains",
+        "Askiy Ridge Hunting Preserve"
+    ],
+
+    "Moose": [
+        "Layton Lake District",
+        "Medved-Taiga National Park",
+        "Yukon Valley",
+        "Revontuli Coast",
+        "New England Mountains",
+        "Askiy Ridge Hunting Preserve"
+    ],
+
+    "Fallow Deer": [
+        "Hirschfelden Hunting Reserve",
+        "Te Awaroa National Park",
+        "Emerald Coast Australia",
+        "Tòrr nan Sìthean Hunting Estate"
+    ],
+
+    "Himalayan Tahr": [
+        "Te Awaroa National Park",
+        "Sundarpatan Hunting Reserve"
+    ],
+
+    "Red Fox": [
+        "Hirschfelden Hunting Reserve",
+        "Yukon Valley",
+        "New England Mountains",
+        "Emerald Coast Australia",
+        "Salzwiesen Park",
+        "Tòrr nan Sìthean Hunting Estate"
+    ],
+
+    "Ring-Necked Pheasant": [
+        "Hirschfelden Hunting Reserve",
+        "Cuatro Colinas Game Reserve",
+        "Rancho del Arroyo",
+        "New England Mountains",
+        "Salzwiesen Park",
+        "Askiy Ridge Hunting Preserve",
+        "Tòrr nan Sìthean Hunting Estate"
+    ],
+
+    "Mule Deer": [
+        "Parque Fernando",
+        "Silver Ridge Peaks",
+        "Rancho del Arroyo",
+        "Askiy Ridge Hunting Preserve"
+    ],
+
+    "Gray Wolf": [
+        "Medved-Taiga National Park",
+        "Yukon Valley",
+        "Askiy Ridge Hunting Preserve"
+    ],
+
+    "Wild Boar": [
+        "Hirschfelden Hunting Reserve",
+        "Medved-Taiga National Park",
+        "Cuatro Colinas Game Reserve",
+        "Tòrr nan Sìthean Hunting Estate"
+    ],
+
+    "Roe Deer": [
+        "Hirschfelden Hunting Reserve",
+        "Cuatro Colinas Game Reserve",
+        "Tòrr nan Sìthean Hunting Estate"
+    ],
+
+    "Jaguar": [
+        "Intisuyu Hunting Reserve"
+    ],
+
+    "Taruca": [
+        "Intisuyu Hunting Reserve"
+    ]
+
+};
+
+
+/* ========================================================
+   RARE DATA
+======================================================== */
+
+const rareData = {
+
+    "Whitetail Deer": [
+        "Albino",
+        "Piebald",
+        "Melanistic"
+    ],
+
+    "Red Deer": [
+        "Albino",
+        "Erythristic",
+        "Leucistic",
+        "Melanistic",
+        "Piebald"
+    ],
+
+    "Black Bear": [
+        "Blonde",
+        "Brown",
+        "Cinnamon"
+    ],
+
+    "Moose": [
+        "Acromelanistic",
+        "Albino",
+        "Melanistic",
+        "Piebald",
+        "Mosaic"
+    ],
+
+    "Fallow Deer": [
+        "Albino",
+        "Melanistic",
+        "Acromelanistic",
+        "Erythristic",
+        "Leucistic",
+        "Piebald"
+    ],
+
+    "Himalayan Tahr": [
+        "Albino",
+        "Red",
+        "White",
+        "Black",
+        "Dark Brown",
+        "Dark Red"
+    ],
+
+    "Red Fox": [
+        "Albino",
+        "Melanistic",
+        "Piebald"
+    ],
+
+    "Ring-Necked Pheasant": [
+        "Albino",
+        "Leucistic",
+        "Melanistic"
+    ],
+
+    "Gray Wolf": [
+        "Acromelanistic",
+        "Albino",
+        "Melanistic",
+        "Melanistic Charcoal",
+        "Dark Grey",
+        "Egg White",
+        "Red Brown"
+    ],
+
+    "Wild Boar": [
+        "Albino",
+        "Melanistic",
+        "Black Gold",
+        "Purple Grey"
+    ],
+
+    "Roe Deer": [
+        "Albino",
+        "Leucistic",
+        "Melanistic",
+        "Piebald"
+    ],
+
+    "Jaguar": [
+        "Albino",
+        "Leucistic",
+        "Piebald",
+        "Pseudo Melanistic"
+    ],
+
+    "Taruca": [
+        "Albino",
+        "Erythristic",
+        "Leucistic",
+        "Piebald",
+        "Melanistic"
+    ],
+
+    "Mule Deer": [
+        "Albino",
+        "Erythristic Isabelline",
+        "Erythristic Red",
+        "Leucistic",
+        "Melanistic",
+        "Mosaic",
+        "Piebald",
+        "Dilute"
+    ]
+
+};
+
+
+/* ========================================================
+   SPECIES NAME COMPATIBILITY
+======================================================== */
+
+greatOneData["Pheasant"] =
+    greatOneData["Ring-Necked Pheasant"];
+
+greatOneData["Tahr"] =
+    greatOneData["Himalayan Tahr"];
+
+rareData["Pheasant"] =
+    rareData["Ring-Necked Pheasant"];
+
+rareData["Tahr"] =
+    rareData["Himalayan Tahr"];
+
+
+/* ========================================================
+   DOM ELEMENTS
+======================================================== */
+
+const emptyState =
+    document.getElementById("emptyState");
+
+const grindPage =
+    document.getElementById("grindPage");
+
+const activeGrinds =
+    document.getElementById("activeGrinds");
+
+const completedGrinds =
+    document.getElementById("completedGrinds");
+
+const newGrindButton =
+    document.getElementById("newGrindButton");
+
+const emptyNewGrindButton =
+    document.getElementById("emptyNewGrindButton");
+
+const newGrindModal =
+    document.getElementById("newGrindModal");
+
+const closeModalButton =
+    document.getElementById("closeModalButton");
+
+const speciesSelect =
+    document.getElementById("speciesSelect");
+
+const mapSelect =
+    document.getElementById("mapSelect");
+
+const createGrindButton =
+    document.getElementById("createGrindButton");
+
+const grindSpecies =
+    document.getElementById("grindSpecies");
+
+const grindMap =
+    document.getElementById("grindMap");
+
+const killsCounter =
+    document.getElementById("killsCounter");
+
+const diamondsCounter =
+    document.getElementById("diamondsCounter");
+
+const diamondRateCounter =
+    document.getElementById("diamondRateCounter");
+
+const trollsCounter =
+    document.getElementById("trollsCounter");
+
+const raresCounter =
+    document.getElementById("raresCounter");
+
+const superRaresCounter =
+    document.getElementById("superRaresCounter");
+
+const greatOnesCounter =
+    document.getElementById("greatOnesCounter");
+
+const rareToggle =
+    document.getElementById("rareToggle");
+
+const rareBreakdown =
+    document.getElementById("rareBreakdown");
+
+const greatOneNameInput =
+    document.getElementById("greatOneNameInput");
+
+const greatOneSpecies =
+    document.getElementById("greatOneSpecies");
+
+const furLabel =
+    document.getElementById("furLabel");
+
+const furSelect =
+    document.getElementById("furSelect");
+
+const rackField =
+    document.getElementById("rackField");
+
+const rackSelect =
+    document.getElementById("rackSelect");
+
+const whitetail5050Field =
+    document.getElementById("whitetail5050Field");
+
+const whitetail5050Input =
+    document.getElementById("whitetail5050Input");
+
+const weightInput =
+    document.getElementById("weightInput");
+
+const weightUnit =
+    document.getElementById("weightUnit");
+
+const scoreInput =
+    document.getElementById("scoreInput");
+
+const logGreatOneButton =
+    document.getElementById("logGreatOneButton");
+
+const greatOneRecords =
+    document.getElementById("greatOneRecords");
+
+const metricButton =
+    document.getElementById("metricButton");
+
+const imperialButton =
+    document.getElementById("imperialButton");
+
+const settingsButton =
+    document.getElementById("settingsButton");
+
+const settingsModal =
+    document.getElementById("settingsModal");
+
+const closeSettingsButton =
+    document.getElementById("closeSettingsButton");
+
+const accentColorInput =
+    document.getElementById("accentColorInput");
+
+const backgroundColorInput =
+    document.getElementById("backgroundColorInput");
+
+const cardColorInput =
+    document.getElementById("cardColorInput");
+
+const textSizeSelect =
+    document.getElementById("textSizeSelect");
+
+const resetSettingsButton =
+    document.getElementById("resetSettingsButton");
+
+
+/* ========================================================
+   STATE
+======================================================== */
+
+let grinds = [];
+
+let currentGrindId = null;
+
+let currentUnit = "metric";
+
+let settings = {
+
+    accentColor: "#6a00ff",
+
+    backgroundColor: "#000000",
+
+    cardColor: "#111111",
+
+    textSize: "medium",
+
+    keybinds: {
+
+        addKill: "K",
+
+        removeKill: "Shift+K",
+
+        addDiamond: "D",
+
+        removeDiamond: "Shift+D",
+
+        addTroll: "T",
+
+        removeTroll: "Shift+T",
+
+        addRare: "R",
+
+        addSuperRare: "S",
+
+        logGreatOne: "G",
+
+        newGrind: "N"
+
+    }
+
+};
+
+
+/* ========================================================
+   LOCAL STORAGE
+======================================================== */
+
+const GRINDS_STORAGE_KEY =
+    "cotwGrinds";
+
+const SETTINGS_STORAGE_KEY =
+    "cotwSettings";
+
+const UNIT_STORAGE_KEY =
+    "cotwUnit";
+
+
+function saveGrinds() {
+
+    localStorage.setItem(
+        GRINDS_STORAGE_KEY,
+        JSON.stringify(grinds)
+    );
+
+}
+
+
+function saveSettings() {
+
+    localStorage.setItem(
+        SETTINGS_STORAGE_KEY,
+        JSON.stringify(settings)
+    );
+
+}
+
+
+function loadSettings() {
+
+    const saved =
+        localStorage.getItem(SETTINGS_STORAGE_KEY);
+
+    if (!saved) {
+        return;
+    }
+
+    try {
+
+        const parsed =
+            JSON.parse(saved);
+
+        settings = {
+
+            ...settings,
+            ...parsed,
+
+            keybinds: {
+                ...settings.keybinds,
+                ...(parsed.keybinds || {})
+            }
+
+        };
+
+    } catch (error) {
+
+        console.error(
+            "Could not load settings:",
+            error
+        );
+
+    }
+
+}
+
+
+function normalizeGreatOneNames() {
+
+    let changed = false;
+
+    const highestNumbers = {};
+
+
+    /*
+       First find the highest automatic name number
+       already being used for every species.
+    */
+
+    grinds.forEach(grind => {
+
+        if (!Array.isArray(grind.greatOneRecords)) {
+            grind.greatOneRecords = [];
+            changed = true;
+        }
+
+        grind.greatOneRecords.forEach(record => {
+
+            if (!record.species) {
+                record.species = grind.species;
+                changed = true;
+            }
+
+            if (
+                typeof record.name === "string" &&
+                record.name.trim()
+            ) {
+
+                const match =
+                    record.name.trim().match(
+                        /^(.+?) #(\d+)$/
+                    );
+
+                if (
+                    match &&
+                    match[1] === record.species
+                ) {
+
+                    const number =
+                        Number(match[2]);
+
+                    if (
+                        !highestNumbers[record.species] ||
+                        number > highestNumbers[record.species]
+                    ) {
+
+                        highestNumbers[record.species] =
+                            number;
+
+                    }
+
+                }
+
+            }
+
+        });
+
+    });
+
+
+    /*
+       Then give legacy unnamed records the next
+       available automatic name.
+    */
+
+    grinds.forEach(grind => {
+
+        grind.greatOneRecords.forEach(record => {
+
+            if (
+                typeof record.name !== "string" ||
+                !record.name.trim()
+            ) {
+
+                const species =
+                    record.species || grind.species;
+
+                if (!highestNumbers[species]) {
+                    highestNumbers[species] = 0;
+                }
+
+                highestNumbers[species]++;
+
+                record.name =
+                    `${species} #${highestNumbers[species]}`;
+
+                changed = true;
+
+            }
+
+        });
+
+    });
+
+
+    return changed;
+}
+
+
+function loadGrinds() {
+
+    const saved =
+        localStorage.getItem(GRINDS_STORAGE_KEY);
+
+    if (saved) {
+
+        try {
+
+            grinds =
+                JSON.parse(saved);
+
+            if (!Array.isArray(grinds)) {
+                grinds = [];
+            }
+
+        } catch (error) {
+
+            console.error(
+                "Could not load grinds:",
+                error
+            );
+
+            grinds = [];
+
+        }
+
+    }
+
+
+    let needsSave = false;
+
+
+    /*
+       Make sure older saved grinds have all the
+       properties the current version expects.
+    */
+
+    grinds.forEach(grind => {
+
+        if (!grind.counters) {
+
+            grind.counters = {
+
+                kills: 0,
+                diamonds: 0,
+                trolls: 0,
+                rares: 0,
+                superRares: 0,
+                greatOnes: 0
+
+            };
+
+            needsSave = true;
+
+        }
+
+        grind.counters.kills =
+            Number(grind.counters.kills) || 0;
+
+        grind.counters.diamonds =
+            Number(grind.counters.diamonds) || 0;
+
+        grind.counters.trolls =
+            Number(grind.counters.trolls) || 0;
+
+        grind.counters.rares =
+            Number(grind.counters.rares) || 0;
+
+        grind.counters.superRares =
+            Number(grind.counters.superRares) || 0;
+
+        grind.counters.greatOnes =
+            Number(grind.counters.greatOnes) || 0;
+
+
+        if (!grind.rareBreakdown) {
+
+            grind.rareBreakdown = {};
+
+            needsSave = true;
+
+        }
+
+
+        /*
+           New rare system flag.
+
+           Old grinds that already have rare breakdown
+           information are treated as initialized.
+
+           Old grinds that only have the old total rare
+           counter keep that total until the user starts
+           using the individual rare controls.
+        */
+
+        if (
+            typeof grind.rareBreakdownInitialized !==
+            "boolean"
+        ) {
+
+            const hasBreakdownData =
+                Object.values(
+                    grind.rareBreakdown
+                ).some(
+                    value =>
+                        Number(value) > 0
+                );
+
+            grind.rareBreakdownInitialized =
+                hasBreakdownData;
+
+            needsSave = true;
+
+        }
+
+
+        if (!Array.isArray(grind.greatOneRecords)) {
+
+            grind.greatOneRecords = [];
+
+            needsSave = true;
+
+        }
+
+
+        if (typeof grind.completed !== "boolean") {
+
+            grind.completed = false;
+
+            needsSave = true;
+
+        }
+
+    });
+
+
+    if (normalizeGreatOneNames()) {
+        needsSave = true;
+    }
+
+
+    if (needsSave) {
+        saveGrinds();
+    }
+
+}
+
+
+function loadUnit() {
+
+    const saved =
+        localStorage.getItem(UNIT_STORAGE_KEY);
+
+    if (
+        saved === "metric" ||
+        saved === "imperial"
+    ) {
+
+        currentUnit = saved;
+
+    }
+
+}
+
+
+/* ========================================================
+   CURRENT GRIND
+======================================================== */
+
+function getCurrentGrind() {
+
+    return grinds.find(
+        grind => grind.id === currentGrindId
+    ) || null;
+
+}
+
+
+function selectGrind(id) {
+
+    currentGrindId = id;
+
+    updatePage();
+
+    updateSidebar();
+
+}
+
+
+/* ========================================================
+   CREATE GRIND
+======================================================== */
+
+function populateSpeciesSelect() {
+
+    speciesSelect.innerHTML =
+        `<option value="">Select Species</option>`;
+
+    Object.keys(greatOneData)
+        .filter(species => {
+            return ![
+                "Pheasant",
+                "Tahr"
+            ].includes(species);
+        })
+        .forEach(species => {
+
+            const option =
+                document.createElement("option");
+
+            option.value = species;
+            option.textContent = species;
+
+            speciesSelect.appendChild(option);
+
+        });
+
+}
+
+
+function updateMapSelect() {
+
+    const species =
+        speciesSelect.value;
+
+    mapSelect.innerHTML = "";
+
+    if (!species) {
+
+        mapSelect.disabled = true;
+
+        mapSelect.innerHTML =
+            `<option value="">Select a species first</option>`;
+
+        return;
+
+    }
+
+
+    mapSelect.disabled = false;
+
+    const maps =
+        speciesMaps[species] || [];
+
+    mapSelect.innerHTML =
+        `<option value="">Select Map</option>`;
+
+
+    maps.forEach(map => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = map;
+        option.textContent = map;
+
+        mapSelect.appendChild(option);
+
+    });
+
+}
+
+
+function openNewGrindModal() {
+
+    speciesSelect.value = "";
+
+    mapSelect.innerHTML =
+        `<option value="">Select a species first</option>`;
+
+    mapSelect.disabled = true;
+
+    newGrindModal.classList.remove("hidden");
+
+}
+
+
+function closeNewGrindModal() {
+
+    newGrindModal.classList.add("hidden");
+
+}
+
+
+function createGrind() {
+
+    const species =
+        speciesSelect.value;
+
+    const map =
+        mapSelect.value;
+
+
+    if (!species) {
+
+        alert("Please select a species.");
+
+        return;
+
+    }
+
+
+    if (!map) {
+
+        alert("Please select a map.");
+
+        return;
+
+    }
+
+
+    const grind = {
+
+        id:
+            Date.now().toString() +
+            Math.random()
+                .toString(36)
+                .slice(2),
+
+        species,
+
+        map,
+
+        counters: {
+
+            kills: 0,
+            diamonds: 0,
+            trolls: 0,
+            rares: 0,
+            superRares: 0,
+            greatOnes: 0
+
+        },
+
+        rareBreakdown: {},
+
+        /*
+           This grind uses the individual rare
+           counters as the source of truth immediately.
+        */
+
+        rareBreakdownInitialized: true,
+
+        greatOneRecords: [],
+
+        completed: false,
+
+        createdAt:
+            new Date().toISOString()
+
+    };
+
+
+    grinds.push(grind);
+
+    saveGrinds();
+
+    currentGrindId = grind.id;
+
+    closeNewGrindModal();
+
+    updateAll();
+
+}
+
+
+/* ========================================================
+   COUNTERS
+======================================================== */
+
+function changeCounter(counter, amount) {
+
+    const grind =
+        getCurrentGrind();
+
+    if (!grind || grind.completed) {
+        return;
+    }
+
+
+    if (
+        !Object.prototype.hasOwnProperty.call(
+            grind.counters,
+            counter
+        )
+    ) {
+        return;
+    }
+
+
+    /*
+       Rares are controlled by their individual
+       rare counters, not by the generic counter.
+    */
+
+    if (counter === "rares") {
+
+        const species =
+            grind.species;
+
+        const rares =
+            rareData[species] || [];
+
+        if (rares.length) {
+
+            changeRareCount(
+                rares[0],
+                amount
+            );
+
+            return;
+
+        }
+
+    }
+
+
+    grind.counters[counter] += amount;
+
+
+    if (grind.counters[counter] < 0) {
+        grind.counters[counter] = 0;
+    }
+
+
+    saveGrinds();
+
+    updateCounterDisplays();
+
+    updateSidebar();
+
+}
+
+
+function updateCounterDisplays() {
+
+    const grind =
+        getCurrentGrind();
+
+    if (!grind) {
+        return;
+    }
+
+
+    /*
+       Once the individual rare counters are being
+       used, the main RARES counter is always their
+       combined total.
+    */
+
+    if (grind.rareBreakdownInitialized) {
+        syncRareTotal(grind);
+    }
+
+
+    const counters =
+        grind.counters;
+
+
+    killsCounter.textContent =
+        counters.kills;
+
+    diamondsCounter.textContent =
+        counters.diamonds;
+
+    trollsCounter.textContent =
+        counters.trolls;
+
+    raresCounter.textContent =
+        counters.rares;
+
+    superRaresCounter.textContent =
+        counters.superRares;
+
+    greatOnesCounter.textContent =
+        counters.greatOnes;
+
+
+    /*
+       Diamond Rate:
+       Total Kills ÷ Diamonds
+
+       Example:
+       20 kills / 1 diamond = 1 : 20.00
+    */
+
+    if (counters.diamonds > 0) {
+
+        const rate =
+            counters.kills /
+            counters.diamonds;
+
+        diamondRateCounter.textContent =
+            `1 : ${rate.toFixed(2)}`;
+
+    } else {
+
+        diamondRateCounter.textContent =
+            "—";
+
+    }
+
+
+    renderRareBreakdown();
+
+    updateGreatOneButton();
+
+}
+
+
+/* ========================================================
+   RARE BREAKDOWN
+======================================================== */
+
+function syncRareTotal(grind) {
+
+    if (!grind) {
+        return;
+    }
+
+
+    if (!grind.rareBreakdown) {
+        grind.rareBreakdown = {};
+    }
+
+
+    const species =
+        grind.species;
+
+    const rares =
+        rareData[species] || [];
+
+
+    let total = 0;
+
+
+    rares.forEach(rare => {
+
+        const count =
+            Number(
+                grind.rareBreakdown[rare]
+            ) || 0;
+
+        total +=
+            Math.max(0, count);
+
+    });
+
+
+    grind.counters.rares =
+        total;
+
+}
+
+
+function changeRareCount(
+    rare,
+    amount
+) {
+
+    const grind =
+        getCurrentGrind();
+
+    if (!grind || grind.completed) {
+        return;
+    }
+
+
+    const species =
+        grind.species;
+
+    const rares =
+        rareData[species] || [];
+
+
+    /*
+       Make sure this rare actually belongs to
+       the current species.
+    */
+
+    if (!rares.includes(rare)) {
+        return;
+    }
+
+
+    if (!grind.rareBreakdown) {
+        grind.rareBreakdown = {};
+    }
+
+
+    const current =
+        Number(
+            grind.rareBreakdown[rare]
+        ) || 0;
+
+
+    const newCount =
+        Math.max(
+            0,
+            current + amount
+        );
+
+
+    if (newCount === 0) {
+
+        delete grind.rareBreakdown[rare];
+
+    } else {
+
+        grind.rareBreakdown[rare] =
+            newCount;
+
+    }
+
+
+    /*
+       From this point forward, the individual
+       rare counters control the total.
+    */
+
+    grind.rareBreakdownInitialized =
+        true;
+
+
+    syncRareTotal(grind);
+
+    saveGrinds();
+
+    updateCounterDisplays();
+
+    updateSidebar();
+
+}
+
+
+function renderRareBreakdown() {
+
+    const grind =
+        getCurrentGrind();
+
+    if (!grind) {
+
+        rareBreakdown.innerHTML = "";
+
+        return;
+
+    }
+
+
+    const species =
+        grind.species;
+
+    const rares =
+        rareData[species] || [];
+
+
+    if (!rares.length) {
+
+        rareBreakdown.innerHTML =
+            `<div class="no-records">
+                No rare data available.
+            </div>`;
+
+        return;
+
+    }
+
+
+    if (!grind.rareBreakdown) {
+        grind.rareBreakdown = {};
+    }
+
+
+    rareBreakdown.innerHTML = "";
+
+
+    rares.forEach(rare => {
+
+        const count =
+            Number(
+                grind.rareBreakdown[rare]
+            ) || 0;
+
+
+        const row =
+            document.createElement("div");
+
+        row.className =
+            "rare-breakdown-row";
+
+
+        const name =
+            document.createElement("span");
+
+        name.className =
+            "rare-breakdown-name";
+
+        name.textContent =
+            rare;
+
+
+        /*
+           Controls:
+           −   count   +
+        */
+
+        const controls =
+            document.createElement("div");
+
+        controls.style.display =
+            "flex";
+
+        controls.style.alignItems =
+            "center";
+
+        controls.style.gap =
+            "6px";
+
+
+        const minus =
+            document.createElement("button");
+
+        minus.className =
+            "record-action-button";
+
+        minus.textContent =
+            "−";
+
+        minus.title =
+            `Remove ${rare}`;
+
+
+        if (count <= 0) {
+
+            minus.disabled =
+                true;
+
+            minus.style.opacity =
+                "0.4";
+
+            minus.style.cursor =
+                "not-allowed";
+
+        }
+
+
+        minus.addEventListener(
+            "click",
+            () => {
+
+                changeRareCount(
+                    rare,
+                    -1
+                );
+
+            }
+        );
+
+
+        const number =
+            document.createElement("span");
+
+        number.className =
+            "rare-breakdown-count";
+
+        number.textContent =
+            count;
+
+        number.style.minWidth =
+            "24px";
+
+        number.style.textAlign =
+            "center";
+
+        number.style.color =
+            "var(--accent-color, #6a00ff)";
+
+
+        const plus =
+            document.createElement("button");
+
+        plus.className =
+            "record-action-button";
+
+        plus.textContent =
+            "+";
+
+        plus.title =
+            `Add ${rare}`;
+
+
+        plus.addEventListener(
+            "click",
+            () => {
+
+                changeRareCount(
+                    rare,
+                    1
+                );
+
+            }
+        );
+
+
+        controls.appendChild(minus);
+
+        controls.appendChild(number);
+
+        controls.appendChild(plus);
+
+
+        row.appendChild(name);
+
+        row.appendChild(controls);
+
+
+        rareBreakdown.appendChild(row);
+
+    });
+
+}
+
+
+function addRare() {
+
+    const grind =
+        getCurrentGrind();
+
+    if (!grind || grind.completed) {
+        return;
+    }
+
+
+    const species =
+        grind.species;
+
+    const rares =
+        rareData[species] || [];
+
+
+    /*
+       If the species has no individual rare list,
+       retain the old generic counter behavior.
+    */
+
+    if (!rares.length) {
+
+        grind.counters.rares =
+            (Number(grind.counters.rares) || 0) + 1;
+
+        saveGrinds();
+
+        updateCounterDisplays();
+
+        return;
+
+    }
+
+
+    /*
+       The keyboard shortcut needs a specific rare.
+       Since there is no selected rare setting, it
+       uses the first rare as the fallback.
+
+       The individual + buttons in Rare Breakdown
+       let you choose exactly which rare to track.
+    */
+
+    changeRareCount(
+        rares[0],
+        1
+    );
+
+}
+
+
+function toggleRareBreakdown() {
+
+    rareBreakdown.classList.toggle(
+        "hidden"
+    );
+
+
+    rareToggle.textContent =
+        rareBreakdown.classList.contains("hidden")
+            ? "▼ Rare Breakdown"
+            : "▲ Rare Breakdown";
+
+}
+
+
+/* ========================================================
+   GREAT ONE FORM
+======================================================== */
+
+function populateGreatOneForm() {
+
+    const grind =
+        getCurrentGrind();
+
+    if (!grind) {
+        return;
+    }
+
+
+    const species =
+        grind.species;
+
+    const data =
+        greatOneData[species] || {};
+
+
+    greatOneSpecies.value =
+        species;
+
+
+    furLabel.textContent =
+        data.furLabel || "Fur";
+
+
+    furSelect.innerHTML =
+        `<option value="">Select ${escapeHtml(
+            data.furLabel || "Fur"
+        )}</option>`;
+
+
+    (data.furs || []).forEach(fur => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = fur;
+        option.textContent = fur;
+
+        furSelect.appendChild(option);
+
+    });
+
+
+    rackSelect.innerHTML =
+        `<option value="">Select Rack</option>`;
+
+
+    (data.racks || []).forEach(rack => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = rack;
+        option.textContent = rack;
+
+        rackSelect.appendChild(option);
+
+    });
+
+
+    if ((data.racks || []).length) {
+
+        rackField.classList.remove("hidden");
+
+    } else {
+
+        rackField.classList.add("hidden");
+
+    }
+
+
+    whitetail5050Field.classList.add(
+        "hidden"
+    );
+
+    whitetail5050Input.value = "";
+
+
+    greatOneNameInput.value = "";
+
+    furSelect.value = "";
+
+    rackSelect.value = "";
+
+    weightInput.value = "";
+
+    scoreInput.value = "";
+
+
+    updateRackRequirements();
+
+}
+
+
+function updateRackRequirements() {
+
+    const grind =
+        getCurrentGrind();
+
+    if (!grind) {
+        return;
+    }
+
+
+    if (
+        grind.species === "Whitetail Deer" &&
+        rackSelect.value === "50/50"
+    ) {
+
+        whitetail5050Field.classList.remove(
+            "hidden"
+        );
+
+    } else {
+
+        whitetail5050Field.classList.add(
+            "hidden"
+        );
+
+        whitetail5050Input.value = "";
+
+    }
+
+}
+
+
+/* ========================================================
+   GREAT ONE NAMING
+======================================================== */
+
+function getNextGreatOneNumber(
+    species,
+    excludeRecordId = null
+) {
+
+    let highest =
+        0;
+
+
+    grinds.forEach(grind => {
+
+        (grind.greatOneRecords || [])
+            .forEach(record => {
+
+                if (
+                    excludeRecordId &&
+                    record.id === excludeRecordId
+                ) {
+                    return;
+                }
+
+
+                if (
+                    record.species !== species
+                ) {
+                    return;
+                }
+
+
+                if (
+                    typeof record.name !== "string"
+                ) {
+                    return;
+                }
+
+
+                const match =
+                    record.name
+                        .trim()
+                        .match(
+                            /^(.+?) #(\d+)$/
+                        );
+
+
+                if (
+                    match &&
+                    match[1] === species
+                ) {
+
+                    const number =
+                        Number(match[2]);
+
+
+                    if (number > highest) {
+                        highest = number;
+                    }
+
+                }
+
+            });
+
+    });
+
+
+    return highest + 1;
+
+}
+
+
+function getGreatOneName(
+    species,
+    enteredName
+) {
+
+    const customName =
+        String(
+            enteredName || ""
+        ).trim();
+
+
+    if (customName) {
+        return customName;
+    }
+
+
+    const number =
+        getNextGreatOneNumber(
+            species
+        );
+
+
+    return `${species} #${number}`;
+
+}
+
+
+/* ========================================================
+   GREAT ONE VALIDATION
+======================================================== */
+
+function validateGreatOneForm() {
+
+    const grind =
+        getCurrentGrind();
+
+    if (!grind) {
+
+        alert("No grind selected.");
+
+        return null;
+
+    }
+
+
+    if (grind.completed) {
+
+        alert(
+            "This grind is already completed."
+        );
+
+        return null;
+
+    }
+
+
+    const fur =
+        furSelect.value.trim();
+
+
+    const rack =
+        rackSelect.value.trim();
+
+
+    const enteredWeight =
+        parseFloat(
+            weightInput.value
+        );
+
+
+    const score =
+        scoreInput.value.trim();
+
+
+    if (!fur) {
+
+        alert(
+            "Please select a Great One fur."
+        );
+
+        return null;
+
+    }
+
+
+    const data =
+        greatOneData[grind.species] || {};
+
+
+    if (
+        Array.isArray(data.racks) &&
+        data.racks.length > 0 &&
+        !rack
+    ) {
+
+        alert(
+            "Please select a Great One rack."
+        );
+
+        return null;
+
+    }
+
+
+    if (
+        grind.species === "Whitetail Deer" &&
+        rack === "50/50" &&
+        !whitetail5050Input.value.trim()
+    ) {
+
+        alert(
+            "Please enter the details for the Whitetail 50/50 rack."
+        );
+
+        return null;
+
+    }
+
+
+    if (
+        !Number.isFinite(enteredWeight) ||
+        enteredWeight <= 0
+    ) {
+
+        alert(
+            "Please enter a valid weight."
+        );
+
+        return null;
+
+    }
+
+
+    let weightKg;
+
+
+    if (currentUnit === "metric") {
+
+        weightKg =
+            enteredWeight;
+
+    } else {
+
+        weightKg =
+            enteredWeight /
+            2.2046226218;
+
+    }
+
+
+    return {
+
+        fur,
+
+        rack:
+            rack || null,
+
+        whitetail5050:
+            grind.species === "Whitetail Deer" &&
+            rack === "50/50"
+                ? whitetail5050Input.value.trim()
+                : null,
+
+        weightKg,
+
+        score:
+            score || null
+
+    };
+
+}
+
+
+/* ========================================================
+   LOG GREAT ONE
+======================================================== */
+
+function logGreatOne() {
+
+    const grind =
+        getCurrentGrind();
+
+    if (!grind) {
+
+        alert("No grind selected.");
+
+        return;
+
+    }
+
+
+    if (grind.completed) {
+
+        alert(
+            "This grind is already completed."
+        );
+
+        return;
+
+    }
+
+
+    const details =
+        validateGreatOneForm();
+
+
+    if (!details) {
+        return;
+    }
+
+
+    const name =
+        getGreatOneName(
+            grind.species,
+            greatOneNameInput.value
+        );
+
+
+    const record = {
+
+        id:
+            Date.now().toString() +
+            Math.random()
+                .toString(36)
+                .slice(2),
+
+        name,
+
+        species:
+            grind.species,
+
+        fur:
+            details.fur,
+
+        rack:
+            details.rack,
+
+        whitetail5050:
+            details.whitetail5050,
+
+        weightKg:
+            details.weightKg,
+
+        score:
+            details.score,
+
+        createdAt:
+            new Date().toISOString()
+
+    };
+
+
+    if (!Array.isArray(grind.greatOneRecords)) {
+        grind.greatOneRecords = [];
+    }
+
+
+    grind.greatOneRecords.push(record);
+
+
+    grind.counters.greatOnes =
+        grind.greatOneRecords.length;
+
+
+    /*
+       The one-click logging action completes
+       the grind immediately.
+    */
+
+    grind.completed = true;
+
+
+    saveGrinds();
+
+    resetGreatOneForm();
+
+    renderGreatOneRecords();
+
+    updateCounterDisplays();
+
+    updateSidebar();
+
+    updateGreatOneButton();
+
+    alert(
+        "Great One logged! The grind has been moved to Grind Logs."
+    );
+
+}
+
+
+/* ========================================================
+   GREAT ONE BUTTON STATE
+======================================================== */
+
+function updateGreatOneButton() {
+
+    const grind =
+        getCurrentGrind();
+
+    if (!grind) {
+        return;
+    }
+
+
+    if (grind.completed) {
+
+        logGreatOneButton.textContent =
+            "Great One Logged — Grind Complete";
+
+        logGreatOneButton.disabled =
+            true;
+
+    } else {
+
+        logGreatOneButton.textContent =
+            "Log Great One & Complete Grind";
+
+        logGreatOneButton.disabled =
+            false;
+
+    }
+
+}
+
+
+/* ========================================================
+   GREAT ONE HISTORY
+======================================================== */
+
+function renderGreatOneRecords() {
+
+    const grind =
+        getCurrentGrind();
+
+    if (!grind) {
+
+        greatOneRecords.innerHTML = "";
+
+        return;
+
+    }
+
+
+    const records =
+        Array.isArray(grind.greatOneRecords)
+            ? grind.greatOneRecords
+            : [];
+
+
+    if (!records.length) {
+
+        greatOneRecords.innerHTML =
+            `<div class="no-records">
+                No Great Ones logged yet.
+            </div>`;
+
+        return;
+
+    }
+
+
+    greatOneRecords.innerHTML = "";
+
+
+    records.forEach(record => {
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            "great-one-record";
+
+
+        const header =
+            document.createElement("div");
+
+        header.className =
+            "great-one-record-header";
+
+
+        const name =
+            document.createElement("div");
+
+        name.className =
+            "great-one-record-name";
+
+        name.textContent =
+            record.name ||
+            `${record.species} #1`;
+
+
+        const actions =
+            document.createElement("div");
+
+        actions.className =
+            "great-one-record-actions";
+
+
+        const renameButton =
+            document.createElement("button");
+
+        renameButton.className =
+            "record-action-button";
+
+        renameButton.textContent =
+            "Rename";
+
+        renameButton.addEventListener(
+            "click",
+            () => renameGreatOne(record.id)
+        );
+
+
+        const deleteButton =
+            document.createElement("button");
+
+        deleteButton.className =
+            "record-action-button delete";
+
+        deleteButton.textContent =
+            "Delete";
+
+        deleteButton.addEventListener(
+            "click",
+            () => deleteGreatOne(record.id)
+        );
+
+
+        actions.appendChild(renameButton);
+
+        actions.appendChild(deleteButton);
+
+        header.appendChild(name);
+
+        header.appendChild(actions);
+
+
+        const details =
+            document.createElement("div");
+
+        details.className =
+            "great-one-record-details";
+
+
+        addGreatOneDetail(
+            details,
+            "Species",
+            record.species
+        );
+
+
+        addGreatOneDetail(
+            details,
+            "Fur",
+            record.fur
+        );
+
+
+        if (record.rack) {
+
+            addGreatOneDetail(
+                details,
+                "Rack",
+                record.rack
+            );
+
+        }
+
+
+        if (record.whitetail5050) {
+
+            addGreatOneDetail(
+                details,
+                "50/50",
+                record.whitetail5050
+            );
+
+        }
+
+
+        if (
+            Number.isFinite(
+                Number(record.weightKg)
+            )
+        ) {
+
+            const displayedWeight =
+                currentUnit === "metric"
+                    ? `${Number(record.weightKg).toFixed(2)} kg`
+                    : `${(
+                        Number(record.weightKg) *
+                        2.2046226218
+                    ).toFixed(2)} lb`;
+
+
+            addGreatOneDetail(
+                details,
+                "Weight",
+                displayedWeight
+            );
+
+        }
+
+
+        if (
+            record.score !== null &&
+            record.score !== undefined &&
+            String(record.score).trim()
+        ) {
+
+            addGreatOneDetail(
+                details,
+                "Score",
+                record.score
+            );
+
+        }
+
+
+        card.appendChild(header);
+
+        card.appendChild(details);
+
+        greatOneRecords.appendChild(card);
+
+    });
+
+}
+
+
+function addGreatOneDetail(
+    container,
+    label,
+    value
+) {
+
+    const detail =
+        document.createElement("div");
+
+    detail.className =
+        "great-one-detail";
+
+
+    const strong =
+        document.createElement("strong");
+
+    strong.textContent =
+        `${label}: `;
+
+
+    detail.appendChild(strong);
+
+    detail.appendChild(
+        document.createTextNode(
+            String(value)
+        )
+    );
+
+
+    container.appendChild(detail);
+
+}
+
+
+function renameGreatOne(recordId) {
+
+    const grind =
+        getCurrentGrind();
+
+    if (!grind) {
+        return;
+    }
+
+
+    const record =
+        grind.greatOneRecords.find(
+            item => item.id === recordId
+        );
+
+
+    if (!record) {
+        return;
+    }
+
+
+    const newName =
+        prompt(
+            "Enter a new name for this Great One:",
+            record.name || ""
+        );
+
+
+    if (newName === null) {
+        return;
+    }
+
+
+    const trimmed =
+        newName.trim();
+
+
+    if (!trimmed) {
+
+        alert(
+            "The name cannot be blank."
+        );
+
+        return;
+
+    }
+
+
+    record.name =
+        trimmed;
+
+
+    saveGrinds();
+
+    renderGreatOneRecords();
+
+}
+
+
+function deleteGreatOne(recordId) {
+
+    const grind =
+        getCurrentGrind();
+
+    if (!grind) {
+        return;
+    }
+
+
+    const recordIndex =
+        grind.greatOneRecords.findIndex(
+            record => record.id === recordId
+        );
+
+
+    if (recordIndex === -1) {
+        return;
+    }
+
+
+    const record =
+        grind.greatOneRecords[recordIndex];
+
+
+    const confirmed =
+        confirm(
+            `Delete "${record.name || "this Great One"}"?`
+        );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    grind.greatOneRecords.splice(
+        recordIndex,
+        1
+    );
+
+
+    grind.counters.greatOnes =
+        grind.greatOneRecords.length;
+
+
+    /*
+       If the only Great One record was deleted
+       from a completed grind, keep the grind
+       completed. This prevents accidentally
+       reopening a finished grind.
+    */
+
+    saveGrinds();
+
+    renderGreatOneRecords();
+
+    updateCounterDisplays();
+
+    updateSidebar();
+
+}
+
+
+/* ========================================================
+   RESET GREAT ONE FORM
+======================================================== */
+
+function resetGreatOneForm() {
+
+    greatOneNameInput.value = "";
+
+    furSelect.value = "";
+
+    rackSelect.value = "";
+
+    whitetail5050Input.value = "";
+
+    weightInput.value = "";
+
+    scoreInput.value = "";
+
+    whitetail5050Field.classList.add(
+        "hidden"
+    );
+
+}
+
+
+/* ========================================================
+   UNITS
+======================================================== */
+
+function setUnit(unit) {
+
+    if (
+        unit !== "metric" &&
+        unit !== "imperial"
+    ) {
+        return;
+    }
+
+
+    currentUnit =
+        unit;
+
+
+    localStorage.setItem(
+        UNIT_STORAGE_KEY,
+        unit
+    );
+
+
+    updateUnitButtons();
+
+    updateWeightUnit();
+
+    renderGreatOneRecords();
+
+}
+
+
+function updateUnitButtons() {
+
+    metricButton.classList.toggle(
+        "active",
+        currentUnit === "metric"
+    );
+
+    imperialButton.classList.toggle(
+        "active",
+        currentUnit === "imperial"
+    );
+
+}
+
+
+function updateWeightUnit() {
+
+    weightUnit.textContent =
+        currentUnit === "metric"
+            ? "kg"
+            : "lb";
+
+}
+
+
+/* ========================================================
+   SIDEBAR
+======================================================== */
+
+function updateSidebar() {
+
+    activeGrinds.innerHTML = "";
+
+    completedGrinds.innerHTML = "";
+
+
+    grinds.forEach(grind => {
+
+        const button =
+            document.createElement("button");
+
+        button.className =
+            "grind-list-item";
+
+
+        if (grind.id === currentGrindId) {
+
+            button.classList.add(
+                "active"
+            );
+
+        }
+
+
+        const species =
+            document.createElement("div");
+
+        species.className =
+            "grind-list-species";
+
+        species.textContent =
+            grind.species;
+
+
+        const map =
+            document.createElement("div");
+
+        map.className =
+            "grind-list-map";
+
+        map.textContent =
+            grind.map;
+
+
+        button.appendChild(species);
+
+        button.appendChild(map);
+
+
+        button.addEventListener(
+            "click",
+            () => selectGrind(grind.id)
+        );
+
+
+        if (grind.completed) {
+
+            completedGrinds.appendChild(
+                button
+            );
+
+        } else {
+
+            activeGrinds.appendChild(
+                button
+            );
+
+        }
+
+    });
+
+
+    if (!activeGrinds.children.length) {
+
+        const empty =
+            document.createElement("div");
+
+        empty.className =
+            "grind-list-map";
+
+        empty.textContent =
+            "No active grinds.";
+
+        activeGrinds.appendChild(empty);
+
+    }
+
+
+    if (!completedGrinds.children.length) {
+
+        const empty =
+            document.createElement("div");
+
+        empty.className =
+            "grind-list-map";
+
+        empty.textContent =
+            "No completed grinds.";
+
+        completedGrinds.appendChild(empty);
+
+    }
+
+}
+
+
+/* ========================================================
+   PAGE UPDATE
+======================================================== */
+
+function updatePage() {
+
+    const grind =
+        getCurrentGrind();
+
+
+    if (!grind) {
+
+        emptyState.classList.remove(
+            "hidden"
+        );
+
+        grindPage.classList.add(
+            "hidden"
+        );
+
+        return;
+
+    }
+
+
+    emptyState.classList.add(
+        "hidden"
+    );
+
+    grindPage.classList.remove(
+        "hidden"
+    );
+
+
+    grindSpecies.textContent =
+        grind.species;
+
+    grindMap.textContent =
+        grind.map;
+
+
+    updateCounterDisplays();
+
+    populateGreatOneForm();
+
+    renderGreatOneRecords();
+
+    updateGreatOneButton();
+
+}
+
+
+function updateAll() {
+
+    updateSidebar();
+
+    updatePage();
+
+}
+
+
+/* ========================================================
+   SETTINGS
+======================================================== */
+
+function applySettings() {
+
+    document.documentElement.style.setProperty(
+        "--accent-color",
+        settings.accentColor
+    );
+
+    document.documentElement.style.setProperty(
+        "--background-color",
+        settings.backgroundColor
+    );
+
+    document.documentElement.style.setProperty(
+        "--card-color",
+        settings.cardColor
+    );
+
+
+    document.body.classList.remove(
+        "text-small",
+        "text-medium",
+        "text-large"
+    );
+
+
+    document.body.classList.add(
+        `text-${settings.textSize}`
+    );
+
+
+    accentColorInput.value =
+        settings.accentColor;
+
+    backgroundColorInput.value =
+        settings.backgroundColor;
+
+    cardColorInput.value =
+        settings.cardColor;
+
+    textSizeSelect.value =
+        settings.textSize;
+
+
+    document
+        .querySelectorAll(".keybind-input")
+        .forEach(input => {
+
+            const keybind =
+                input.dataset.keybind;
+
+            input.value =
+                settings.keybinds[keybind] || "";
+
+        });
+
+}
+
+
+function openSettings() {
+
+    applySettings();
+
+    settingsModal.classList.remove(
+        "hidden"
+    );
+
+}
+
+
+function closeSettings() {
+
+    settingsModal.classList.add(
+        "hidden"
+    );
+
+}
+
+
+function resetSettings() {
+
+    const confirmed =
+        confirm(
+            "Reset all customization and keybind settings?"
+        );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    settings = {
+
+        accentColor: "#6a00ff",
+
+        backgroundColor: "#000000",
+
+        cardColor: "#111111",
+
+        textSize: "medium",
+
+        keybinds: {
+
+            addKill: "K",
+
+            removeKill: "Shift+K",
+
+            addDiamond: "D",
+
+            removeDiamond: "Shift+D",
+
+            addTroll: "T",
+
+            removeTroll: "Shift+T",
+
+            addRare: "R",
+
+            addSuperRare: "S",
+
+            logGreatOne: "G",
+
+            newGrind: "N"
+
+        }
+
+    };
+
+
+    saveSettings();
+
+    applySettings();
+
+}
+
+
+/* ========================================================
+   KEYBINDS
+======================================================== */
+
+function normalizeKeyEvent(event) {
+
+    let key =
+        event.key;
+
+
+    if (key === " ") {
+        key = "Space";
+    }
+
+
+    if (key.length === 1) {
+        key = key.toUpperCase();
+    }
+
+
+    const parts = [];
+
+
+    if (event.ctrlKey) {
+        parts.push("Ctrl");
+    }
+
+    if (event.altKey) {
+        parts.push("Alt");
+    }
+
+    if (event.shiftKey) {
+        parts.push("Shift");
+    }
+
+
+    parts.push(key);
+
+
+    return parts.join("+");
+
+}
+
+
+function isTypingTarget(element) {
+
+    if (!element) {
+        return false;
+    }
+
+
+    const tag =
+        element.tagName;
+
+
+    return (
+        tag === "INPUT" ||
+        tag === "TEXTAREA" ||
+        tag === "SELECT"
+    );
+
+}
+
+
+function handleKeybinds(event) {
+
+    if (isTypingTarget(event.target)) {
+        return;
+    }
+
+
+    const key =
+        normalizeKeyEvent(event);
+
+
+    const bind =
+        settings.keybinds;
+
+
+    if (key === bind.addKill) {
+
+        changeCounter(
+            "kills",
+            1
+        );
+
+        event.preventDefault();
+
+    }
+
+    else if (key === bind.removeKill) {
+
+        changeCounter(
+            "kills",
+            -1
+        );
+
+        event.preventDefault();
+
+    }
+
+    else if (key === bind.addDiamond) {
+
+        changeCounter(
+            "diamonds",
+            1
+        );
+
+        event.preventDefault();
+
+    }
+
+    else if (key === bind.removeDiamond) {
+
+        changeCounter(
+            "diamonds",
+            -1
+        );
+
+        event.preventDefault();
+
+    }
+
+    else if (key === bind.addTroll) {
+
+        changeCounter(
+            "trolls",
+            1
+        );
+
+        event.preventDefault();
+
+    }
+
+    else if (key === bind.removeTroll) {
+
+        changeCounter(
+            "trolls",
+            -1
+        );
+
+        event.preventDefault();
+
+    }
+
+    else if (key === bind.addRare) {
+
+        addRare();
+
+        event.preventDefault();
+
+    }
+
+    else if (key === bind.addSuperRare) {
+
+        changeCounter(
+            "superRares",
+            1
+        );
+
+        event.preventDefault();
+
+    }
+
+    else if (key === bind.logGreatOne) {
+
+        logGreatOne();
+
+        event.preventDefault();
+
+    }
+
+    else if (key === bind.newGrind) {
+
+        openNewGrindModal();
+
+        event.preventDefault();
+
+    }
+
+}
+
+
+/* ========================================================
+   KEYBIND EDITING
+======================================================== */
+
+document
+    .querySelectorAll(".keybind-input")
+    .forEach(input => {
+
+        input.addEventListener(
+            "keydown",
+            event => {
+
+                event.preventDefault();
+
+                const key =
+                    normalizeKeyEvent(event);
+
+
+                const keybind =
+                    input.dataset.keybind;
+
+
+                settings.keybinds[keybind] =
+                    key;
+
+
+                input.value =
+                    key;
+
+
+                saveSettings();
+
+            }
+        );
+
+    });
+
+
+/* ========================================================
+   COLOR / SETTINGS EVENTS
+======================================================== */
+
+accentColorInput.addEventListener(
+    "input",
+    () => {
+
+        settings.accentColor =
+            accentColorInput.value;
+
+        applySettings();
+
+        saveSettings();
+
+    }
+);
+
+
+backgroundColorInput.addEventListener(
+    "input",
+    () => {
+
+        settings.backgroundColor =
+            backgroundColorInput.value;
+
+        applySettings();
+
+        saveSettings();
+
+    }
+);
+
+
+cardColorInput.addEventListener(
+    "input",
+    () => {
+
+        settings.cardColor =
+            cardColorInput.value;
+
+        applySettings();
+
+        saveSettings();
+
+    }
+);
+
+
+textSizeSelect.addEventListener(
+    "change",
+    () => {
+
+        settings.textSize =
+            textSizeSelect.value;
+
+        applySettings();
+
+        saveSettings();
+
+    }
+);
+
+
+/* ========================================================
+   EVENT LISTENERS
+======================================================== */
+
+newGrindButton.addEventListener(
+    "click",
+    openNewGrindModal
+);
+
+
+emptyNewGrindButton.addEventListener(
+    "click",
+    openNewGrindModal
+);
+
+
+closeModalButton.addEventListener(
+    "click",
+    closeNewGrindModal
+);
+
+
+createGrindButton.addEventListener(
+    "click",
+    createGrind
+);
+
+
+speciesSelect.addEventListener(
+    "change",
+    updateMapSelect
+);
+
+
+rareToggle.addEventListener(
+    "click",
+    toggleRareBreakdown
+);
+
+
+rackSelect.addEventListener(
+    "change",
+    updateRackRequirements
+);
+
+
+logGreatOneButton.addEventListener(
+    "click",
+    logGreatOne
+);
+
+
+metricButton.addEventListener(
+    "click",
+    () => setUnit("metric")
+);
+
+
+imperialButton.addEventListener(
+    "click",
+    () => setUnit("imperial")
+);
+
+
+settingsButton.addEventListener(
+    "click",
+    openSettings
+);
+
+
+closeSettingsButton.addEventListener(
+    "click",
+    closeSettings
+);
+
+
+resetSettingsButton.addEventListener(
+    "click",
+    resetSettings
+);
+
+
+window.addEventListener(
+    "keydown",
+    handleKeybinds
+);
+
+
+/* ========================================================
+   CLOSE MODALS BY CLICKING OUTSIDE
+======================================================== */
+
+newGrindModal.addEventListener(
+    "click",
+    event => {
+
+        if (
+            event.target ===
+            newGrindModal
+        ) {
+
+            closeNewGrindModal();
+
+        }
+
+    }
+);
+
+
+settingsModal.addEventListener(
+    "click",
+    event => {
+
+        if (
+            event.target ===
+            settingsModal
+        ) {
+
+            closeSettings();
+
+        }
+
+    }
+);
+
+
+/* ========================================================
+   ESCAPE KEY
+======================================================== */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (event.key !== "Escape") {
+            return;
+        }
+
+
+        if (
+            !newGrindModal.classList.contains(
+                "hidden"
+            )
+        ) {
+
+            closeNewGrindModal();
+
+        }
+
+
+        if (
+            !settingsModal.classList.contains(
+                "hidden"
+            )
+        ) {
+
+            closeSettings();
+
+        }
+
+    }
+);
+
+
+/* ========================================================
+   HTML ESCAPING
+======================================================== */
+
+function escapeHtml(value) {
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* ========================================================
+   INITIALIZE
+======================================================== */
+
+loadSettings();
+
+loadGrinds();
+
+loadUnit();
+
+populateSpeciesSelect();
+
+applySettings();
+
+updateUnitButtons();
+
+updateWeightUnit();
+
+updateAll();
